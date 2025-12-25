@@ -1,11 +1,9 @@
 import Link from "next/link";
-import { Button } from "@/components/ui/Button";
-import { Coffee, Utensils, Mail, MapPin } from "lucide-react";
+import { Coffee, Utensils, MapPin } from "lucide-react";
 
 const ctaItems = [
   { href: "/menu", label: "메뉴 보기", icon: Coffee },
   { href: "/location", label: "위치 보기", icon: MapPin },
-  { href: "/contact", label: "문의하기", icon: Mail },
   { href: "/catering", label: "케이터링", icon: Utensils },
 ];
 
@@ -13,7 +11,7 @@ export default function CTASection() {
   return (
     <section className="py-16 bg-warm-gray">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+        <div className="grid grid-cols-3 gap-4 max-w-4xl mx-auto">
           {ctaItems.map((item) => {
             const Icon = item.icon;
             return (

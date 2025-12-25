@@ -16,7 +16,6 @@ export default function Header() {
     { href: "/menu", label: "메뉴" },
     { href: "/gallery", label: "갤러리" },
     { href: "/catering", label: "케이터링" },
-    { href: "/contact", label: "문의" },
     { href: "/location", label: "오시는 길" },
   ];
 
@@ -39,9 +38,6 @@ export default function Header() {
                 {item.label}
               </Link>
             ))}
-            <Link href="/contact">
-              <Button size="sm">문의하기</Button>
-            </Link>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -81,9 +77,6 @@ export default function Header() {
                   {item.label}
                 </Link>
               ))}
-              <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>
-                <Button size="sm" className="w-full">문의하기</Button>
-              </Link>
             </div>
           </nav>
         )}
