@@ -6,6 +6,7 @@ export default function Hero() {
   const video1Ref = useRef<HTMLVideoElement>(null);
   const video2Ref = useRef<HTMLVideoElement>(null);
   const [currentVideo, setCurrentVideo] = useState(1);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   useEffect(() => {
     const video1 = video1Ref.current;
@@ -19,8 +20,9 @@ export default function Hero() {
       });
     };
 
-    // 즉시 재생 시도
-    playVideo(video1);
+    const handleVideo1Playing = () => {
+      setIsPlaying(true);
+    };
 
     const handleVideo1End = () => {
       setCurrentVideo(2);
@@ -32,10 +34,16 @@ export default function Hero() {
       playVideo(video1);
     };
 
+    // 비디오가 재생 시작되면 표시
+    video1.addEventListener("playing", handleVideo1Playing);
     video1.addEventListener("ended", handleVideo1End);
     video2.addEventListener("ended", handleVideo2End);
 
+    // 즉시 재생 시도
+    playVideo(video1);
+
     return () => {
+      video1.removeEventListener("playing", handleVideo1Playing);
       video1.removeEventListener("ended", handleVideo1End);
       video2.removeEventListener("ended", handleVideo2End);
     };
@@ -54,9 +62,9 @@ export default function Hero() {
           disablePictureInPicture
           disableRemotePlayback
           className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 hero-video ${
-            currentVideo === 1 ? "opacity-100 z-10" : "opacity-0 z-0"
+            currentVideo === 1 && isPlaying ? "opacity-100 z-10" : "opacity-0 z-0"
           }`}
-          style={{ pointerEvents: "none" }}
+          style={{ pointerEvents: "none", visibility: isPlaying ? "visible" : "hidden" }}
         >
           <source src="/hero.mp4" type="video/mp4" />
         </video>
@@ -69,9 +77,9 @@ export default function Hero() {
           disablePictureInPicture
           disableRemotePlayback
           className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 hero-video ${
-            currentVideo === 2 ? "opacity-100 z-10" : "opacity-0 z-0"
+            currentVideo === 2 && isPlaying ? "opacity-100 z-10" : "opacity-0 z-0"
           }`}
-          style={{ pointerEvents: "none" }}
+          style={{ pointerEvents: "none", visibility: isPlaying ? "visible" : "hidden" }}
         >
           <source src="/hero2.mp4" type="video/mp4" />
         </video>
