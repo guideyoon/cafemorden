@@ -10,7 +10,7 @@
           "options": ["핫", "아이스"],
           "isSeasonal": false,
           "isSignature": true,
-          "image": "/images/menu/modern-latte.jpg"
+          "image": "/gallery/ml.png"
         },
         {
           "name": "바닐라 크림 콜드브루",
@@ -19,7 +19,7 @@
           "options": ["아이스"],
           "isSeasonal": false,
           "isSignature": true,
-          "image": "/images/menu/vanilla-coldbrew.jpg"
+          "image": "/gallery/vc.png"
         },
         {
           "name": "헤이즐넛 아메리카노",
@@ -28,7 +28,7 @@
           "options": ["핫", "아이스", "디카페인"],
           "isSeasonal": false,
           "isSignature": true,
-          "image": "/images/menu/hazelnut-americano.jpg"
+          "image": "/gallery/ha.png"
         }
       ]
     },
