@@ -75,9 +75,36 @@ export default function LocationPageContent() {
             </div>
           </div>
         </div>
-        <div className="bg-warm-gray p-6 rounded-lg">
+        <div className="bg-warm-gray p-6 rounded-lg mb-8">
           <h3 className="font-bold mb-2">근처 랜드마크</h3>
           <p>강남역 도보 5분 거리</p>
+        </div>
+        <div className="mt-8">
+          <h2 className="text-2xl font-serif font-bold mb-4 text-brown text-center">
+            지도
+          </h2>
+          <div className="w-full h-[500px] rounded-lg overflow-hidden shadow-lg">
+            <iframe
+              src={`https://www.google.com/maps?q=${encodeURIComponent(siteData.address)}&output=embed`}
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="카페 모던 위치"
+            />
+          </div>
+          <div className="mt-4 text-center">
+            <a
+              href="https://maps.app.goo.gl/bGqxVgqZ1JiJeKZ6A"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-brown hover:underline inline-flex items-center gap-2"
+            >
+              구글맵에서 크게 보기 →
+            </a>
+          </div>
         </div>
       </div>
     </div>
