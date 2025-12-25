@@ -14,7 +14,7 @@ export default function SignatureSection() {
           {signatureItems.map((item, index) => (
             <div key={index} className="bg-warm-gray rounded-lg overflow-hidden">
               {item.image && (
-                <div className="relative h-48 w-full">
+                <div className="relative h-64 w-full">
                   <Image
                     src={item.image}
                     alt={item.name}
