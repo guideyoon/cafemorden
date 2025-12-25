@@ -65,14 +65,14 @@ export default function Header() {
 
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
-          <nav className="md:hidden pb-4 border-t border-gray-200 mt-2 pt-4">
+          <nav className="md:hidden pb-4 border-t border-gray-200 mt-2 pt-4 bg-brown">
             <div className="flex flex-col gap-4">
               {navItems.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="text-text-base hover:text-brown transition-colors py-2"
+                  className="text-white hover:text-cream-light transition-colors py-2"
                 >
                   {item.label}
                 </Link>
