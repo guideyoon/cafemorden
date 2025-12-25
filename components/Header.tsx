@@ -65,7 +65,7 @@ export default function Header() {
 
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
-          <nav className="md:hidden pb-4 border-t border-gray-200 mt-2 pt-4 bg-brown overflow-hidden">
+          <nav className="md:hidden pb-2 border-t border-gray-200 mt-2 pt-2 bg-brown overflow-hidden">
             <div 
               className="flex flex-col animate-[fadeInUp_0.3s_ease-out]"
             >
@@ -74,7 +74,7 @@ export default function Header() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="text-white hover:text-cream-light transition-colors py-3 border-b border-white/10 last:border-b-0 opacity-0"
+                  className="text-white hover:text-cream-light transition-colors py-2 pl-3 text-lg border-b border-white/10 last:border-b-0 opacity-0"
                   style={{
                     animation: `fadeInUp 0.3s ease-out ${index * 0.05}s forwards`
                   }}
