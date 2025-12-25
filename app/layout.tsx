@@ -9,6 +9,7 @@ import { getSiteData, getActiveAnnouncements } from "@/lib/contentLoader";
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://cafemorden.com"),
   title: {
     default: "카페 모던 | 따뜻한 커피와 모던한 공간",
     template: "%s | 카페 모던",
