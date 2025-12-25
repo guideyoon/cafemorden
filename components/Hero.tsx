@@ -6,7 +6,7 @@ export default function Hero() {
   const video1Ref = useRef<HTMLVideoElement>(null);
   const video2Ref = useRef<HTMLVideoElement>(null);
   const [currentVideo, setCurrentVideo] = useState(1);
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [isReady, setIsReady] = useState(false);
 
   useEffect(() => {
     const video1 = video1Ref.current;
@@ -15,39 +15,73 @@ export default function Hero() {
     if (!video1 || !video2) return;
 
     const playVideo = (video: HTMLVideoElement) => {
-      video.play().catch((error) => {
-        console.log("Video autoplay failed:", error);
-      });
+      const playPromise = video.play();
+      if (playPromise !== undefined) {
+        playPromise
+          .then(() => {
+            setIsReady(true);
+          })
+          .catch((error) => {
+            console.log("Video autoplay failed:", error);
+            // 재생 실패해도 표시
+            setIsReady(true);
+          });
+      }
     };
 
-    const handleVideo1Playing = () => {
-      setIsPlaying(true);
+    // canplay 이벤트로 재생 가능한 즉시 재생
+    const handleVideo1CanPlay = () => {
+      if (!isReady) {
+        playVideo(video1);
+      }
+    };
+
+    // loadeddata 이벤트로도 시도 (더 빠른 시점)
+    const handleVideo1LoadedData = () => {
+      if (!isReady && video1.readyState >= 2) {
+        playVideo(video1);
+      }
     };
 
     const handleVideo1End = () => {
       setCurrentVideo(2);
-      playVideo(video2);
+      if (video2.readyState >= 2) {
+        playVideo(video2);
+      } else {
+        video2.addEventListener("canplay", () => playVideo(video2), { once: true });
+      }
     };
 
     const handleVideo2End = () => {
       setCurrentVideo(1);
-      playVideo(video1);
+      if (video1.readyState >= 2) {
+        playVideo(video1);
+      } else {
+        video1.addEventListener("canplay", () => playVideo(video1), { once: true });
+      }
     };
 
-    // 비디오가 재생 시작되면 표시
-    video1.addEventListener("playing", handleVideo1Playing);
+    // 여러 이벤트 리스너로 빠른 재생 시도
+    video1.addEventListener("canplay", handleVideo1CanPlay);
+    video1.addEventListener("loadeddata", handleVideo1LoadedData);
     video1.addEventListener("ended", handleVideo1End);
     video2.addEventListener("ended", handleVideo2End);
 
-    // 즉시 재생 시도
-    playVideo(video1);
+    // 이미 로드된 경우 즉시 재생
+    if (video1.readyState >= 2) {
+      playVideo(video1);
+    } else {
+      // 강제로 로드 시작
+      video1.load();
+    }
 
     return () => {
-      video1.removeEventListener("playing", handleVideo1Playing);
+      video1.removeEventListener("canplay", handleVideo1CanPlay);
+      video1.removeEventListener("loadeddata", handleVideo1LoadedData);
       video1.removeEventListener("ended", handleVideo1End);
       video2.removeEventListener("ended", handleVideo2End);
     };
-  }, []);
+  }, [isReady]);
 
   return (
     <section className="relative h-[60vh] min-h-[400px] max-h-[600px] overflow-hidden">
@@ -61,10 +95,10 @@ export default function Hero() {
           preload="auto"
           disablePictureInPicture
           disableRemotePlayback
-          className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 hero-video ${
-            currentVideo === 1 && isPlaying ? "opacity-100 z-10" : "opacity-0 z-0"
+          className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-500 hero-video ${
+            currentVideo === 1 && isReady ? "opacity-100 z-10" : "opacity-0 z-0"
           }`}
-          style={{ pointerEvents: "none", visibility: isPlaying ? "visible" : "hidden" }}
+          style={{ pointerEvents: "none" }}
         >
           <source src="/hero.mp4" type="video/mp4" />
         </video>
@@ -76,10 +110,10 @@ export default function Hero() {
           preload="auto"
           disablePictureInPicture
           disableRemotePlayback
-          className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 hero-video ${
-            currentVideo === 2 && isPlaying ? "opacity-100 z-10" : "opacity-0 z-0"
+          className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-500 hero-video ${
+            currentVideo === 2 && isReady ? "opacity-100 z-10" : "opacity-0 z-0"
           }`}
-          style={{ pointerEvents: "none", visibility: isPlaying ? "visible" : "hidden" }}
+          style={{ pointerEvents: "none" }}
         >
           <source src="/hero2.mp4" type="video/mp4" />
         </video>
