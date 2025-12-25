@@ -6,6 +6,7 @@ export default function Hero() {
   const video1Ref = useRef<HTMLVideoElement>(null);
   const video2Ref = useRef<HTMLVideoElement>(null);
   const [currentVideo, setCurrentVideo] = useState(1);
+  const [videoLoaded, setVideoLoaded] = useState(false);
 
   useEffect(() => {
     const video1 = video1Ref.current;
@@ -19,8 +20,27 @@ export default function Hero() {
       });
     };
 
-    // 초기 재생
-    playVideo(video1);
+    const handleVideo1Loaded = () => {
+      setVideoLoaded(true);
+      playVideo(video1);
+    };
+
+    const handleVideo2Loaded = () => {
+      if (!videoLoaded) {
+        setVideoLoaded(true);
+      }
+    };
+
+    // 비디오 로드 완료 이벤트
+    video1.addEventListener("loadeddata", handleVideo1Loaded);
+    video2.addEventListener("loadeddata", handleVideo2Loaded);
+
+    // 초기 재생 시도
+    if (video1.readyState >= 2) {
+      handleVideo1Loaded();
+    } else {
+      playVideo(video1);
+    }
 
     const handleVideo1End = () => {
       setCurrentVideo(2);
@@ -36,10 +56,12 @@ export default function Hero() {
     video2.addEventListener("ended", handleVideo2End);
 
     return () => {
+      video1.removeEventListener("loadeddata", handleVideo1Loaded);
+      video2.removeEventListener("loadeddata", handleVideo2Loaded);
       video1.removeEventListener("ended", handleVideo1End);
       video2.removeEventListener("ended", handleVideo2End);
     };
-  }, []);
+  }, [videoLoaded]);
 
   return (
     <section className="relative h-[60vh] min-h-[400px] max-h-[600px] overflow-hidden">
@@ -48,10 +70,13 @@ export default function Hero() {
           ref={video1Ref}
           muted
           playsInline
-          preload="auto"
-          className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 ${
-            currentVideo === 1 ? "opacity-100 z-10" : "opacity-0 z-0"
+          preload="metadata"
+          disablePictureInPicture
+          disableRemotePlayback
+          className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 hero-video ${
+            currentVideo === 1 && videoLoaded ? "opacity-100 z-10" : "opacity-0 z-0"
           }`}
+          style={{ pointerEvents: "none" }}
         >
           <source src="/hero.mp4" type="video/mp4" />
         </video>
@@ -59,13 +84,19 @@ export default function Hero() {
           ref={video2Ref}
           muted
           playsInline
-          preload="auto"
-          className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 ${
-            currentVideo === 2 ? "opacity-100 z-10" : "opacity-0 z-0"
+          preload="metadata"
+          disablePictureInPicture
+          disableRemotePlayback
+          className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 hero-video ${
+            currentVideo === 2 && videoLoaded ? "opacity-100 z-10" : "opacity-0 z-0"
           }`}
+          style={{ pointerEvents: "none" }}
         >
           <source src="/hero2.mp4" type="video/mp4" />
         </video>
+        {!videoLoaded && (
+          <div className="absolute inset-0 bg-cream-light z-15" />
+        )}
         <div className="absolute inset-0 bg-black/20 z-20" />
       </div>
       <div className="relative h-full flex items-center justify-center z-30">

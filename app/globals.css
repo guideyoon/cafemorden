@@ -53,6 +53,37 @@ h1, h2, h3, h4, h5, h6 {
   color: #2C2C2C;
 }
 
+/* Hide video controls on mobile */
+.hero-video::-webkit-media-controls {
+  display: none !important;
+}
+
+.hero-video::-webkit-media-controls-enclosure {
+  display: none !important;
+}
+
+.hero-video::-webkit-media-controls-panel {
+  display: none !important;
+}
+
+.hero-video::-webkit-media-controls-play-button {
+  display: none !important;
+}
+
+.hero-video::-webkit-media-controls-start-playback-button {
+  display: none !important;
+}
+
+.hero-video {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.hero-video::-webkit-media-controls-overlay-play-button {
+  display: none !important;
+}
+
 /* Shine animation for hero title */
 @keyframes shine {
   0% {
