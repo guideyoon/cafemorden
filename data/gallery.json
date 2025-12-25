@@ -1,0 +1,73 @@
+{
+  "sections": [
+    {
+      "title": "공간",
+      "images": [
+        {
+          "url": "/images/gallery/space-1.jpg",
+          "alt": "카페 모던의 따뜻한 조명이 있는 공간"
+        },
+        {
+          "url": "/images/gallery/space-2.jpg",
+          "alt": "모던한 인테리어의 카페 내부"
+        },
+        {
+          "url": "/images/gallery/space-3.jpg",
+          "alt": "편안한 좌석 공간"
+        }
+      ]
+    },
+    {
+      "title": "메뉴",
+      "images": [
+        {
+          "url": "/images/gallery/menu-1.jpg",
+          "alt": "시그니처 모던 라떼"
+        },
+        {
+          "url": "/images/gallery/menu-2.jpg",
+          "alt": "바닐라 크림 콜드브루"
+        },
+        {
+          "url": "/images/gallery/menu-3.jpg",
+          "alt": "다양한 커피 메뉴"
+        }
+      ]
+    },
+    {
+      "title": "디저트",
+      "images": [
+        {
+          "url": "/images/gallery/dessert-1.jpg",
+          "alt": "치즈케이크와 티라미수"
+        },
+        {
+          "url": "/images/gallery/dessert-2.jpg",
+          "alt": "초콜릿 케이크"
+        },
+        {
+          "url": "/images/gallery/dessert-3.jpg",
+          "alt": "마카롱과 크루아상"
+        }
+      ]
+    },
+    {
+      "title": "바 & 좌석",
+      "images": [
+        {
+          "url": "/images/gallery/bar-1.jpg",
+          "alt": "카페 바 카운터"
+        },
+        {
+          "url": "/images/gallery/seat-1.jpg",
+          "alt": "편안한 좌석 공간"
+        },
+        {
+          "url": "/images/gallery/seat-2.jpg",
+          "alt": "창가 좌석"
+        }
+      ]
+    }
+  ]
+}
+

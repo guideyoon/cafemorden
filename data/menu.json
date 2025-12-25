@@ -1,0 +1,238 @@
+{
+  "categories": [
+    {
+      "categoryName": "시그니처",
+      "items": [
+        {
+          "name": "모던 라떼",
+          "price": 5500,
+          "desc": "카페 모던만의 특별한 블렌드로 만든 부드러운 라떼",
+          "options": ["핫", "아이스"],
+          "isSeasonal": false,
+          "isSignature": true,
+          "image": "/images/menu/modern-latte.jpg"
+        },
+        {
+          "name": "바닐라 크림 콜드브루",
+          "price": 6000,
+          "desc": "부드러운 바닐라 크림과 함께하는 시원한 콜드브루",
+          "options": ["아이스"],
+          "isSeasonal": false,
+          "isSignature": true,
+          "image": "/images/menu/vanilla-coldbrew.jpg"
+        },
+        {
+          "name": "헤이즐넛 아메리카노",
+          "price": 4500,
+          "desc": "고소한 헤이즐넛 향이 가미된 아메리카노",
+          "options": ["핫", "아이스", "디카페인"],
+          "isSeasonal": false,
+          "isSignature": true,
+          "image": "/images/menu/hazelnut-americano.jpg"
+        }
+      ]
+    },
+    {
+      "categoryName": "커피",
+      "items": [
+        {
+          "name": "에스프레소",
+          "price": 3500,
+          "desc": "진한 에스프레소 샷",
+          "options": ["핫"],
+          "isSeasonal": false,
+          "isSignature": false
+        },
+        {
+          "name": "아메리카노",
+          "price": 4000,
+          "desc": "깔끔한 아메리카노",
+          "options": ["핫", "아이스"],
+          "isSeasonal": false,
+          "isSignature": false
+        },
+        {
+          "name": "카페라떼",
+          "price": 4500,
+          "desc": "부드러운 우유와 에스프레소의 조화",
+          "options": ["핫", "아이스"],
+          "isSeasonal": false,
+          "isSignature": false
+        },
+        {
+          "name": "카푸치노",
+          "price": 4500,
+          "desc": "우유 거품이 올라간 카푸치노",
+          "options": ["핫"],
+          "isSeasonal": false,
+          "isSignature": false
+        },
+        {
+          "name": "콜드브루",
+          "price": 5000,
+          "desc": "시원하고 깔끔한 콜드브루",
+          "options": ["아이스"],
+          "isSeasonal": false,
+          "isSignature": false
+        }
+      ]
+    },
+    {
+      "categoryName": "논커피",
+      "items": [
+        {
+          "name": "초콜릿 라떼",
+          "price": 5000,
+          "desc": "진한 초콜릿과 우유의 조화",
+          "options": ["핫", "아이스"],
+          "isSeasonal": false,
+          "isSignature": false
+        },
+        {
+          "name": "그린티 라떼",
+          "price": 5000,
+          "desc": "고소한 말차와 우유의 만남",
+          "options": ["핫", "아이스"],
+          "isSeasonal": false,
+          "isSignature": false
+        },
+        {
+          "name": "레몬에이드",
+          "price": 5500,
+          "desc": "상큼한 레몬에이드",
+          "options": ["아이스"],
+          "isSeasonal": false,
+          "isSignature": false
+        },
+        {
+          "name": "자몽에이드",
+          "price": 5500,
+          "desc": "달콤한 자몽에이드",
+          "options": ["아이스"],
+          "isSeasonal": false,
+          "isSignature": false
+        },
+        {
+          "name": "딸기 라떼",
+          "price": 5500,
+          "desc": "달콤한 딸기와 우유",
+          "options": ["아이스"],
+          "isSeasonal": false,
+          "isSignature": false
+        }
+      ]
+    },
+    {
+      "categoryName": "티",
+      "items": [
+        {
+          "name": "얼그레이",
+          "price": 4500,
+          "desc": "향긋한 얼그레이 티",
+          "options": ["핫", "아이스"],
+          "isSeasonal": false,
+          "isSignature": false
+        },
+        {
+          "name": "캐모마일",
+          "price": 4500,
+          "desc": "편안한 캐모마일 티",
+          "options": ["핫", "아이스"],
+          "isSeasonal": false,
+          "isSignature": false
+        },
+        {
+          "name": "페퍼민트",
+          "price": 4500,
+          "desc": "상쾌한 페퍼민트 티",
+          "options": ["핫", "아이스"],
+          "isSeasonal": false,
+          "isSignature": false
+        },
+        {
+          "name": "히비스커스",
+          "price": 4500,
+          "desc": "새콤달콤한 히비스커스 티",
+          "options": ["아이스"],
+          "isSeasonal": false,
+          "isSignature": false
+        },
+        {
+          "name": "유자차",
+          "price": 5000,
+          "desc": "따뜻한 유자차",
+          "options": ["핫"],
+          "isSeasonal": false,
+          "isSignature": false
+        }
+      ]
+    },
+    {
+      "categoryName": "디저트",
+      "items": [
+        {
+          "name": "치즈케이크",
+          "price": 6500,
+          "desc": "부드러운 뉴욕 스타일 치즈케이크",
+          "options": [],
+          "isSeasonal": false,
+          "isSignature": false
+        },
+        {
+          "name": "티라미수",
+          "price": 7000,
+          "desc": "정통 이탈리안 티라미수",
+          "options": [],
+          "isSeasonal": false,
+          "isSignature": false
+        },
+        {
+          "name": "초콜릿 케이크",
+          "price": 6500,
+          "desc": "진한 초콜릿 케이크",
+          "options": [],
+          "isSeasonal": false,
+          "isSignature": false
+        },
+        {
+          "name": "크루아상",
+          "price": 4000,
+          "desc": "바삭한 크루아상",
+          "options": [],
+          "isSeasonal": false,
+          "isSignature": false
+        },
+        {
+          "name": "마카롱",
+          "price": 3000,
+          "desc": "달콤한 마카롱 (1개)",
+          "options": [],
+          "isSeasonal": false,
+          "isSignature": false
+        }
+      ]
+    },
+    {
+      "categoryName": "시즌",
+      "items": [
+        {
+          "name": "딸기 라떼",
+          "price": 6000,
+          "desc": "신선한 딸기가 들어간 시즌 한정 라떼",
+          "options": ["아이스"],
+          "isSeasonal": true,
+          "isSignature": false
+        },
+        {
+          "name": "체리 블라썸 라떼",
+          "price": 6000,
+          "desc": "봄 시즌 한정 체리 블라썸 라떼",
+          "options": ["핫", "아이스"],
+          "isSeasonal": true,
+          "isSignature": false
+        }
+      ]
+    }
+  ]
+}
+
