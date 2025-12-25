@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     url: "https://cafemorden.com",
     siteName: "카페 모던",
     title: "카페 모던 | 따뜻한 커피와 모던한 공간",
-    description: "따뜻한 커피와 모던한 공간에서 만나는 특별한 하루",
+    description: "따뜻한 커피와 모던한 공간에서 만나는<br>특별한 하루",
     images: [
       {
         url: "/og-image.jpg",

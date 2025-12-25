@@ -124,7 +124,10 @@ export default function Hero() {
           <h1 className="text-5xl md:text-6xl font-serif font-bold mb-4 hero-title-shine" data-text="카페 모던">
             카페 모던
           </h1>
-          <p className="text-xl md:text-2xl">따뜻한 커피와 모던한 공간에서 만나는 특별한 하루</p>
+          <p className="text-xl md:text-2xl">
+            따뜻한 커피와 모던한 공간에서 만나는<br />
+            특별한 하루
+          </p>
         </div>
       </div>
     </section>
