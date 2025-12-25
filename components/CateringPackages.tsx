@@ -8,16 +8,16 @@ export default function CateringPackages({ packages }: CateringPackagesProps) {
   return (
     <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
       {packages.map((pkg, index) => (
-        <div key={index} className="bg-white border-2 border-warm-gray rounded-lg p-6">
-          <h3 className="text-2xl font-serif font-bold mb-4 text-warm-brown">
+        <div key={index} className="bg-cream-light border-2 border-warm-gray rounded-lg p-6">
+          <h3 className="text-2xl font-serif font-bold mb-4 text-brown">
             {pkg.name}
           </h3>
-          <p className="text-2xl font-bold mb-4 text-warm-terra">
+          <p className="text-2xl font-bold mb-4 text-brown">
             {pkg.priceFrom.toLocaleString()}원부터
           </p>
           <div className="mb-4">
-            <h4 className="font-semibold mb-2">포함 사항:</h4>
-            <ul className="space-y-1 text-sm text-gray-700">
+            <h4 className="font-semibold mb-2 text-text-heading">포함 사항:</h4>
+            <ul className="space-y-1 text-sm text-text-base">
               {pkg.includes.map((item, idx) => (
                 <li key={idx}>• {item}</li>
               ))}

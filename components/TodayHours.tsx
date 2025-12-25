@@ -26,12 +26,12 @@ export default function TodayHours() {
   const status = getCurrentStatus();
 
   return (
-    <section className="py-12 bg-white">
+    <section className="py-12 bg-cream-light">
       <div className="container mx-auto px-4">
         <div className="max-w-md mx-auto bg-warm-gray p-6 rounded-lg">
           <div className="flex items-center gap-3 mb-4">
-            <Clock className="w-6 h-6 text-warm-brown" />
-            <h2 className="text-2xl font-serif font-bold text-warm-brown">
+            <Clock className="w-6 h-6 text-brown" />
+            <h2 className="text-2xl font-serif font-bold text-brown">
               오늘 영업 정보
             </h2>
           </div>
@@ -39,7 +39,7 @@ export default function TodayHours() {
             <p className={`text-lg font-semibold ${status.color}`}>
               {status.status}
             </p>
-            <p className="text-gray-700">
+            <p className="text-text-base">
               {isWeekend ? "주말" : "평일"}: {hours.open} - {hours.close}
             </p>
             <p className="text-sm text-gray-600">

@@ -14,15 +14,15 @@ export default function CateringPage() {
 
   return (
     <div className="container mx-auto px-4 py-12">
-      <h1 className="text-4xl font-serif font-bold text-center mb-8 text-warm-brown">
+      <h1 className="text-4xl font-serif font-bold text-center mb-8 text-brown">
         케이터링 및 대관
       </h1>
       <div className="max-w-3xl mx-auto mb-12">
-        <p className="text-lg text-center text-gray-700 mb-8">
+        <p className="text-lg text-center text-text-base mb-8">
           {cateringData.intro}
         </p>
         <div className="bg-warm-gray p-6 rounded-lg mb-8">
-          <h2 className="text-2xl font-serif font-bold mb-4 text-warm-brown">
+          <h2 className="text-2xl font-serif font-bold mb-4 text-brown">
             서비스 안내
           </h2>
           <ul className="space-y-2 mb-4">

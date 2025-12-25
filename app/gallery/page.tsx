@@ -12,7 +12,7 @@ export default function GalleryPage() {
 
   return (
     <div className="container mx-auto px-4 py-12">
-      <h1 className="text-4xl font-serif font-bold text-center mb-12 text-warm-brown">
+      <h1 className="text-4xl font-serif font-bold text-center mb-12 text-brown">
         갤러리
       </h1>
       <GalleryGrid sections={sections} />

@@ -17,11 +17,11 @@ export function Button({
   return (
     <button
       className={cn(
-        "rounded-lg font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-warm-brown focus:ring-offset-2",
+        "rounded-lg font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-brown focus:ring-offset-2",
         {
-          "bg-warm-brown text-white hover:bg-warm-brown/90": variant === "primary",
-          "bg-warm-terra text-white hover:bg-warm-terra/90": variant === "secondary",
-          "border-2 border-warm-brown text-warm-brown hover:bg-warm-brown hover:text-white":
+          "bg-brown text-white hover:bg-brown/90": variant === "primary",
+          "bg-brown text-white hover:bg-brown/90": variant === "secondary",
+          "border-2 border-brown text-brown hover:bg-brown hover:text-white":
             variant === "outline",
           "px-4 py-2 text-sm": size === "sm",
           "px-6 py-3 text-base": size === "md",

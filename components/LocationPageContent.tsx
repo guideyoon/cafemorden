@@ -12,17 +12,17 @@ export default function LocationPageContent() {
 
   return (
     <div className="container mx-auto px-4 py-12">
-      <h1 className="text-4xl font-serif font-bold text-center mb-12 text-warm-brown">
+      <h1 className="text-4xl font-serif font-bold text-center mb-12 text-brown">
         오시는 길
       </h1>
       <div className="max-w-4xl mx-auto">
         <div className="grid md:grid-cols-2 gap-8 mb-8">
           <div>
-            <h2 className="text-2xl font-serif font-bold mb-4 text-warm-brown flex items-center gap-2">
+            <h2 className="text-2xl font-serif font-bold mb-4 text-brown flex items-center gap-2">
               <MapPin className="w-6 h-6" />
               주소
             </h2>
-            <p className="text-lg mb-4">{siteData.address}</p>
+            <p className="text-lg mb-4 text-text-base">{siteData.address}</p>
             <Button onClick={copyAddress}>주소 복사</Button>
             <div className="mt-4 space-y-2">
               {siteData.naverMapUrl && (
@@ -30,7 +30,7 @@ export default function LocationPageContent() {
                   href={siteData.naverMapUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block text-warm-brown hover:underline"
+                  className="block text-brown hover:underline"
                 >
                   네이버 지도로 보기 →
                 </a>
@@ -40,7 +40,7 @@ export default function LocationPageContent() {
                   href={siteData.googleMapUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block text-warm-brown hover:underline"
+                  className="block text-brown hover:underline"
                 >
                   구글 지도로 보기 →
                 </a>
@@ -48,30 +48,30 @@ export default function LocationPageContent() {
             </div>
           </div>
           <div>
-            <h2 className="text-2xl font-serif font-bold mb-4 text-warm-brown flex items-center gap-2">
+            <h2 className="text-2xl font-serif font-bold mb-4 text-brown flex items-center gap-2">
               <Car className="w-6 h-6" />
               주차 안내
             </h2>
             {siteData.parking.available ? (
-              <p className="text-lg">{siteData.parking.info}</p>
+              <p className="text-lg text-text-base">{siteData.parking.info}</p>
             ) : (
-              <p className="text-lg">주차 공간이 없습니다. 대중교통을 이용해주세요.</p>
+              <p className="text-lg text-text-base">주차 공간이 없습니다. 대중교통을 이용해주세요.</p>
             )}
           </div>
         </div>
         <div className="mb-8">
-          <h2 className="text-2xl font-serif font-bold mb-4 text-warm-brown flex items-center gap-2">
+          <h2 className="text-2xl font-serif font-bold mb-4 text-brown flex items-center gap-2">
             <Train className="w-6 h-6" />
             대중교통 안내
           </h2>
           <div className="space-y-4">
             <div className="flex items-start gap-3">
-              <Train className="w-5 h-5 text-warm-brown mt-1" />
-              <p>{siteData.transit.subway}</p>
+              <Train className="w-5 h-5 text-brown mt-1" />
+              <p className="text-text-base">{siteData.transit.subway}</p>
             </div>
             <div className="flex items-start gap-3">
-              <Bus className="w-5 h-5 text-warm-brown mt-1" />
-              <p>{siteData.transit.bus}</p>
+              <Bus className="w-5 h-5 text-brown mt-1" />
+              <p className="text-text-base">{siteData.transit.bus}</p>
             </div>
           </div>
         </div>

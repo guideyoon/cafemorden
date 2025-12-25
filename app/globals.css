@@ -20,8 +20,8 @@ body {
 }
 
 body {
-  color: #333;
-  background: #fff;
+  color: #4A4A4A;
+  background: #FAF8F5;
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -46,6 +46,11 @@ html {
 :focus-visible {
   outline: 2px solid #8B6F47;
   outline-offset: 2px;
+}
+
+/* Heading colors */
+h1, h2, h3, h4, h5, h6 {
+  color: #2C2C2C;
 }
 
 /* Shine animation for hero title */

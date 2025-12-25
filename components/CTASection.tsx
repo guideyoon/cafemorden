@@ -16,9 +16,9 @@ export default function CTASection() {
             const Icon = item.icon;
             return (
               <Link key={item.href} href={item.href}>
-                <div className="bg-white p-6 rounded-lg text-center hover:shadow-lg transition-shadow">
-                  <Icon className="w-8 h-8 mx-auto mb-3 text-warm-brown" />
-                  <p className="font-medium text-gray-700">{item.label}</p>
+                <div className="bg-cream-light p-6 rounded-lg text-center hover:shadow-lg transition-shadow">
+                  <Icon className="w-8 h-8 mx-auto mb-3 text-brown" />
+                  <p className="font-medium text-text-base">{item.label}</p>
                 </div>
               </Link>
             );

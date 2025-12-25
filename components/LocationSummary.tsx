@@ -6,35 +6,35 @@ import { Button } from "@/components/ui/Button";
 export default function LocationSummary() {
 
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-cream-light">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-serif font-bold text-center mb-8 text-warm-brown">
+          <h2 className="text-3xl font-serif font-bold text-center mb-8 text-brown">
             오시는 길
           </h2>
           <div className="bg-warm-gray p-8 rounded-lg space-y-4">
             <div className="flex items-start gap-3">
-              <MapPin className="w-5 h-5 text-warm-brown mt-1" />
+              <MapPin className="w-5 h-5 text-brown mt-1" />
               <div>
-                <p className="font-semibold mb-1">주소</p>
-                <p className="text-gray-700">{siteData.address}</p>
+                <p className="font-semibold mb-1 text-text-heading">주소</p>
+                <p className="text-text-base">{siteData.address}</p>
               </div>
             </div>
             {siteData.parking.available && (
               <div className="flex items-start gap-3">
-                <Car className="w-5 h-5 text-warm-brown mt-1" />
+                <Car className="w-5 h-5 text-brown mt-1" />
                 <div>
-                  <p className="font-semibold mb-1">주차</p>
-                  <p className="text-gray-700">{siteData.parking.info}</p>
+                  <p className="font-semibold mb-1 text-text-heading">주차</p>
+                  <p className="text-text-base">{siteData.parking.info}</p>
                 </div>
               </div>
             )}
             <div className="flex items-start gap-3">
-              <Train className="w-5 h-5 text-warm-brown mt-1" />
+              <Train className="w-5 h-5 text-brown mt-1" />
               <div>
-                <p className="font-semibold mb-1">대중교통</p>
-                <p className="text-gray-700">{siteData.transit.subway}</p>
-                <p className="text-gray-700">{siteData.transit.bus}</p>
+                <p className="font-semibold mb-1 text-text-heading">대중교통</p>
+                <p className="text-text-base">{siteData.transit.subway}</p>
+                <p className="text-text-base">{siteData.transit.bus}</p>
               </div>
             </div>
             <div className="pt-4">
