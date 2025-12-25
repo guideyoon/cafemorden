@@ -19,7 +19,7 @@ export default function GalleryGrid({ sections }: GalleryGridProps) {
 
   return (
     <>
-      <div className="grid md:grid-cols-3 gap-4">
+      <div className="grid md:grid-cols-3 gap-6">
         {allImages.map((image, index) => (
           <div
             key={index}

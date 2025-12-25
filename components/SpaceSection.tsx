@@ -15,7 +15,7 @@ export default function SpaceSection() {
           <div className="grid md:grid-cols-2 gap-6">
             <div className="relative h-64 rounded-lg overflow-hidden">
               <Image
-                src="/images/space-1.jpg"
+                src="/gallery/g1.png"
                 alt="카페 모던 실내 공간"
                 fill
                 className="object-cover"
@@ -23,7 +23,7 @@ export default function SpaceSection() {
             </div>
             <div className="relative h-64 rounded-lg overflow-hidden">
               <Image
-                src="/images/space-2.jpg"
+                src="/gallery/g2.png"
                 alt="카페 모던 좌석 공간"
                 fill
                 className="object-cover"
